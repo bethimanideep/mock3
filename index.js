@@ -4,6 +4,9 @@ const { connection, usermodel } = require("./db")
 const app = express()
 app.use(express.json())
 app.use(cors())
+app.get("/",(req,res)=>{
+    res.json("welcome")
+})
 app.post("/addbook", async (req, res) => {
     try {
         const { Title, Author, Genre, Description, Price } = req.body
